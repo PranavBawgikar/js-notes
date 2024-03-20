@@ -1,39 +1,79 @@
 CSS or Cascading Style Sheets is a language used to describe the style of a document.
+
+Syntax for writing CSS styling:
+
+`Property : Value ;`
+
+Property is the styling a particular behavior of an HTML element and its value can be predefined or user defined.
+<br/><br/>
 ## Types of styling in CSS
 In general, there are three types of styling in CSS:
 1. Inline Styling:
 This style has more priority than the other two, Internal and External.
+
+*Example:*
 ```html
 <h1 style="color: red">Hello World</h1>
 ```
-2. < style > tag / Internal Styling
+2. Internal Styling: It is done using the <style> tag:
 ```html
-<style>
-  h1 {
-    color: red;
-  }
-</style>
+...
+  <style>
+    h1 {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+...
+</body>
+</html>
 ```
-3. External Styling
-Writing CSS in a separate document & linking it with HTML file.
+3. External Styling:
+Writing CSS in a separate document & linking it with an HTML file.
+
+*Example:*
 ```html
 <link rel="stylesheet" href="styles.css">
 ```
-Here, the `rel` attribute specifies the with what type of relationship are we linking this file. In our case, a stylesheet. 
+Here, the `rel` attribute specifies with what type of "relationship" are we linking this file. In our case, its a stylesheet. 
+<br/><br/>
+## Selectors in CSS
+There are various types of selectors in CSS to select HTML elements and style such as:
+1. Type Selector: Here, the particular HTML elements is directly selected to style
 
-Syntax of CSS:
-Property : Value - Here, the value can be predefined or user defined.
-### Selectors in CSS
-1. Type Selector: h1 { }
-2. Universal Selector: * { }
-3. Class Selector: .box { }
-4. id Selector: #unique { }
-5. Pseudo Class Selector: selector:pseudo-class
-### Text Properties
-1. text-align: left / right / center / start / end
-This property is relative to its parent tag. If a h1 tag is inside a div tag then on applying text-align, the effect will only work inside the div tag.
-2. font-weight: The value for this property ranges from 100 to 900.
-### Element States
+   `h1 {
+     font-size: 16px;
+   }`
+2. Universal Selector: Selects everything in the document.
+   
+    `* { margin-top: 0; }`
+4. Class Selector: Selects elements based on their assigned classnames.
+
+   `.box { }`
+7. id Selector: Selects elements based on their assigned IDs.
+  
+   `#unique { }`
+10. Pseudo Class Selector: `selector:pseudo-class`
+<br/><br/>
+## Text Property
+1. `text-align`: This property is relative to its parent tag. If a < h1 > tag is inside a < div > tag then on applying text-align, the effect will only work inside this < div > tag. The possible values for text-align are:
+   - left
+   - right
+   - center
+   - start
+   - end
+3. `font-weight`: We can assign certain weight to our font to make it look more bolder using this property which ranges from 100 to 900.
+<br/><br/>
+## Display Property
+There are two types of elements in HTML, `Block` which occupy 100% width of the screen like < div >, < h1 > and `Inline`, these elements occupy the space as per their requirement < button >, < input >, < span >, < a >
+1. `display`: All possible values for display property:
+   - inline
+   - block: Block is the default display of div elements
+   - inline-block: Inline-block is simiilar to inline but we can set margin and padding.
+   - none: None is used to remove the element from the document flow.
+<br/><br/>
+## Element States
 1. :hover
 2. :visited
 ### CSS Units
@@ -81,12 +121,6 @@ Shorthand for padding: 1px 2px 3px 4px; (top | right | bottom | left - clockwise
 <mark>Block-level elements, by default have a width of 100% or we can say that they cover the entire width of the viewport.
 Images are an inline element</mark>
 
-### Display Property
-display: inline / block / inline-block / none
-==block is the default display of div elements==
-==inline-block is simiilar to inline but we can set margin and padding.==
-==none to remove element from the document flow.==
-==There are two types of elements in HTML, block (they occupy 100% width of the screen[div, h1]) and inline(these elements occupy the space as per requirement[button, input, span, a])==
 ### Visibility Property
 visibility: hidden;
 
