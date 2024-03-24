@@ -18,6 +18,7 @@ The order is as follows:
 2. Multiplication & Division
 3. Addition & Subtraction
 4. Comparison Operators (<, >, <=, >=, ==, !=)
+5. Logical Operators (&&, ||, !)
 
 _This is also known as the operator precedence._
 
