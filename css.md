@@ -57,7 +57,7 @@ There are various types of selectors in CSS to select HTML elements and style su
 10. Pseudo Class Selector: `selector:pseudo-class`
 <br/><br/>
 ## Text Property
-1. `text-align`: This property is relative to its parent tag. If a < h1 > tag is inside a < div > tag then on applying text-align, the effect will only work inside this < div > tag. The possible values for text-align are:
+1. `text-align`: This property is relative to its parent tag. If a < h1 > tag is inside a < div > tag then on applying text-align, the effect will only work inside this < div > tag. All possible values for text-align are:
    - left
    - right
    - center
@@ -73,6 +73,19 @@ There are two types of elements in HTML, `Block` which occupy 100% width of the 
    - inline-block: Inline-block is simiilar to inline but we can set margin and padding.
    - none: None is used to remove the element from the document flow.
 <br/><br/>
+## Visibility Property
+`visibility: hidden;`
+
+When visibility is set to none, space for the element is reserved but when the display property is set to none, no space is reserved or blocked for that element.
+<br/><br/>
+## Position Property
+This property defines how an element is positioned in a document. All possible values for display property:
+- static: By default all the elements are static. The `top`, `right`, `bottom`, `left` and `z-index` properties will have no effect when an element is static.
+- relative: This means that the element is relative to itself. The `top`, `right`, `bottom`, `left` and `z-index` properties will work here.
+- absolute: Absolute elements will be positioned relative to its closest positioned / non-static ancestor.
+- fixed: Relative to the browser.
+### z-index
+It decides the stack level of elements. Overlapping elements with a larger z-index cover those with a smaller one.
 ## Element States
 1. :hover
 2. :visited
@@ -121,24 +134,13 @@ Shorthand for padding: 1px 2px 3px 4px; (top | right | bottom | left - clockwise
 <mark>Block-level elements, by default have a width of 100% or we can say that they cover the entire width of the viewport.
 Images are an inline element</mark>
 
-### Visibility Property
-visibility: hidden;
 
-When visibility is set to none, space for the element is reserved but for display set to none, no space is reserved or blocked for the element.
 ### Alpha Channel in RGBA
 It decides the opacity of a color, it ranges from 0 to 1
 `rgba(255, 0, 0, 0.5)`
 ### em & rem
 1em means match the font size of the parent. The rem unit is short for Root Em. That means it's always relative to the "root" of our document. The root of an HTML page is always the html element.
-### Position Property
-This property sets how an element is positioned in a document.
-position: static / relative / absolute / fixed
-1. static - By default all the elements are static (the top, right, bottom, left and z-index properties have no effect)
-2. relative - element is relative to itself. (the top, right, bottom, left and z-index properties will work)
-3. absolute - positioned relative to its closest positioned/non-static ancestor.
-4. fixed - relative to the browser.
-### z-index
-It decides the stack level of elements. Overlapping elements with a larger z-index cover those with a smaller one.
+
 ### background-size Property
 background-size: cover / contain / auto
 1. cover: It covers the whole container without leaving any empty space.
