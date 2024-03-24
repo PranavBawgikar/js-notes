@@ -17,6 +17,7 @@ The order is as follows:
 1. Paranthesis
 2. Multiplication & Division
 3. Addition & Subtraction
+4. Comparison Operators (<, >, <=, >=, ==, !=)
 
 _This is also known as the operator precedence._
 
@@ -40,17 +41,17 @@ For example:
 (2095 + 799) / 100 which would be 28.94, we divide by 100 because each dollar has 100 cents.
 To round a number use
 ```js
-Math.round(2.2) // 2
-Math.round(2.8) // 3
+console.log(Math.round(2.2)) // 2
+console.log(Math.round(2.8)) // 3
 ```
 
 ## JS Strings
 In JS, you can add or cancat strings in the following wway:
 ```js
-'hi' + 'there' // 'hithere'
+console.log('hi' + 'there') // 'hithere'
 // To check the type of a value
-typeof 'hello' // 'string'
-typeof 2 // 'number'
+console.log(typeof 'hello') // 'string'
+console.log(typeof 2) // 'number'
 
 'hello' + 3 // When you add a string and a number, JavaScript automatically converts the number into string, this is known as Type Coercion (automatic type conversion)
 ```
@@ -75,3 +76,29 @@ console.log(
 )
 // some\ntext
 ```
+## JavaScript Variables
+Some syntax rules for variables:
+1. Can't use special words. Example: `let`
+2. Can't start with a number.
+3. Can't use special characters except: $, _
+
+There are 3 ways to create variables in JavaScript:
+1. `var`: Originally `var` keyword was used in JavaScript to declare variables before ES6 (ECMAScript). It is not used anymore due to some issues. Later, a new keyword `let` was introduced which is block-scoped, and can be updated but not re-declared on the contrary, `var` keyword could be re-declared and updated in its scope.
+2. `let`: Only use `let` when we need to change the value of the variable.
+3. `const`: It creates a variable like `let`. Only difference is that we cannot change its value later. It makes our code safer and easier to understand therefore the best practice is to use `const` by default.
+
+_Example:_
+```javascript
+//Declaring a variable
+let name = “Pranav”;
+console.log(name);
+
+let b = 'Pranav';
+{
+  let b = 'Bawgikar';
+  console.log(b);
+}
+console.log(b);
+//so in this example, if you replace let with var and then if you check output you will get 'Bawgikar' twice.
+```
+`Note: Variables in JavaScript can use uppercase or lowercase alphabets.`
