@@ -46,8 +46,8 @@ console.log(Math.round(2.2)) // 2
 console.log(Math.round(2.8)) // 3
 ```
 
-## JS Strings
-In JS, you can add or cancat strings in the following wway:
+## JavaScript Strings
+In JavaScript, you can add or cancat strings in the following wway:
 ```js
 console.log('hi' + 'there') // 'hithere'
 // To check the type of a value
@@ -103,3 +103,29 @@ console.log(b);
 //so in this example, if you replace let with var and then if you check output you will get 'Bawgikar' twice.
 ```
 `Note: Variables in JavaScript can use uppercase or lowercase alphabets.`
+## JavaScript Boolean
+A boolean is a data type whose value represents whether something is true or false. This data type has only two possible values either _true_ or _false_. 
+### Truthy and Falsy values
+- List of Truthy values: Any value that is not included in the Falsy values list is a Truthy value.
+- List of Falsy values: False, 0, ' ', NaN, undefined, null.
+
+These Truthy and Falsy values can be used as shortcuts in our code.
+_Example:_
+```js
+const cartQuantity = 5
+// Usually we check like
+if(cartQuantity > 0) {
+  console.log('The cart has products') // We only wanna display this message if our cart has products
+}
+// But now instead of doing this comparison we can just write
+if(cartQuantity) {
+  console.log('The cart has products')
+}
+// These values also work with logical operators
+console.log(!0) // It will output 'true' since zero is a falsy value and the '!' operator will flip it
+```
+_Understanding the above code:_
+
+When `cartQuantity` = 5<br />Then `cartQuantity > 0`  will result in  `true`<br />And just writing `cartQuantity` will be a `truthy` value.
+<br /><br />
+When `cartQuantity` = 0<br />Then `cartQuantity > 0` will result in `false`<br />And just writing `cartQuantity` will be a `falsy` value.
