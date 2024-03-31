@@ -48,3 +48,12 @@ _Example:_
   </body>
 </html>
 ```
+One thing to remember, whenever we get a value from the DOM it will be a string
+### Window Object
+The `window` object represents the browser. The `document` object is inside the `window` object and so is the `console` object. If we do-
+```js
+window.console.log('window')
+// It is the same as
+console.log('window')
+```
+We generally don't type `window.` while coding because `window` is a built-in and JavaScript automatically adds it for us automatically.
