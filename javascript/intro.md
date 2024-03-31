@@ -85,7 +85,7 @@ Some syntax rules for variables:
 
 There are 3 ways to create variables in JavaScript:
 1. `var`: Originally `var` keyword was used in JavaScript to declare variables before ES6 (ECMAScript). It is not used anymore due to some issues. Later, a new keyword `let` was introduced which is block-scoped, and can be updated but not re-declared on the contrary, `var` keyword could be re-declared and updated in its scope.
-2. `let`: Only use `let` when we need to change the value of the variable.
+2. `let`: The `let` keyword is used to decalare variables whose value might change at different parts of the program. You can reuse these variables as you wish.
 3. `const`: It creates a variable like `let`. Only difference is that we cannot change its value later. It makes our code safer and easier to understand therefore the best practice is to use `const` by default.
 
 _Example:_
@@ -100,7 +100,15 @@ let b = 'Pranav';
   console.log(b);
 }
 console.log(b);
-//so in this example, if you replace let with var and then if you check output you will get 'Bawgikar' twice.
+/ Sso in this example, if you replace let with var and then if you check output you will get 'Bawgikar' twice.
+
+// Demostration of `let`
+let count = 0
+count = 1 // The variable can be reassigned with the new value
+
+// Demostration of `const`
+const url = 'http://google.com'
+const visitors = 12
 ```
 `Note: Variables in JavaScript can use uppercase or lowercase alphabets.`
 ## JavaScript Boolean
