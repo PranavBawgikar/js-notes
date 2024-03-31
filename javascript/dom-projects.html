@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dom-projects.css">
+    <title>DOM Projects</title>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="subscribe()" class="subscribe-button">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Enter order cost" onkeydown="handleCostKeyDown(event)"> <!-- It is a type of void elemet, since it does not require a closing tag -->
+    <button onclick="calculateTotal()" class="calculateTotal">Calculate</button>
+    <p class="totalCost"></p>
+    <script>
+        function subscribe() {
+        const buttonText = document.querySelector('.subscribe-button')
+        
+        if(buttonText.innerHTML === 'Subscribe') { // Here you can also use the `innerText` property instead of `innerHTML`
+            buttonText.innerHTML = 'Subscribed'
+            buttonText.classList.add('isSubscribed') // Adds a class to an element
+        } else {
+            buttonText.innerHTML = 'Subscribe'
+            buttonText.classList.remove('isSubscribed')
+        }
+        }
+
+        function calculateTotal() {
+            let costInput = Number(document.querySelector('input').value) // Avoiding the Type Coercion here by called the Number() method as any value returned by the DOM will be a string
+            if(costInput < 40) {
+                costInput = costInput + 10
+            }
+            document.querySelector('.totalCost').innerHTML = `$${costInput}`
+         }
+
+        function handleCostKeyDown(event) {
+            if(event.key === 'Enter') {
+                calculateTotal()
+            }
+        }
+    </script>
+</body>
+</html>
