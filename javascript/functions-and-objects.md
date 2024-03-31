@@ -58,7 +58,7 @@ var c = addFunc(2,3);
 To write to the console use console.log()</mark>
 <br /><br />
 ## Objects in JavaScript
-Objects are a type of variable, quite similar to array but they have something called key-value pairs. Inside an object, we can store any type of values
+An object stores key-value pairs, aka properties. The key is a `string` while the value of the property is any JavaScript data type, or another object.
 
 _Basic syntax:_ 
 ```js
@@ -74,6 +74,7 @@ console.log(person['shirt']) // Bracket notation
 person.phone = '1-222-333-4444'
 console.log(person)
 ```
+Note that, even if an object is declared as a constant, it can be changed by adding, updating or removing its properties. <br />
 Bracket notations let's us use properties that normally don't work with dot notation. Let's say we have a property called `delivery-time` for our `product` object and if we
 
 ```js
