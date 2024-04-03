@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.result {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.reset {
+    background-color: gray;
+    border: none;
+    color: white;
+    font-size: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
