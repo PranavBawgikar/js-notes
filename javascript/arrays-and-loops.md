@@ -70,8 +70,17 @@ If nothing was removed from the array, then the return value will just be an emp
 
 _Syntax_:
 `splice(start, optional delete count, optional items to add)`
+```js
+// If we wanted to add another item to the list we can write
+groceries.splice(1, 0, "waffles")
+// Since we are not deleting anything our delete count will be zero
+console.log(groceries) // ['banana', 'waffles', 'pear', 'apple', 'orange', 'cookie']
+console.log(groceries.splice(1, 0, "waffles")) // [], It returns an empty array because nothing was removed from here
 
-
+// If we want to remove 'apple' from the array we can use start and delete parameters
+groceries.splice(2, 1) // ['apple']
+```
+The `slice` and `splice` array methods might seem similar to each other, but there are a few key differences. <br />The `slice()` method can be used to create a copy of an array or return a portion of an array. It is important to note that the `slice()` method does not alter the original array but instead creates a shallow copy.
 
 ```javascript
 //sum of array elements
