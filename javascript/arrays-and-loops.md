@@ -1,4 +1,4 @@
-# JavaScript Arrays
+## JavaScript Arrays
 In JavaScript, the array elements needn’t be of the same data-type.
 ```javascript
 const arr = ['hey', 'hi', 'yo', 100, true];
@@ -157,7 +157,7 @@ let a1 = arr.filter((a) => {
 })
 console.log(a1);
 ```
-###### Array reduce() method
+Array reduce() method
 ```javascript
 let arr1 = [1, 2, 4, 5, 3, 1];
 let a2 = arr1.reduce((h1, h2) => {
@@ -166,4 +166,60 @@ let a2 = arr1.reduce((h1, h2) => {
 console.log(a2);
 //output: 16
 //Basically, we sum up all the array elements
+```
+<br /><br />
+## JavaScript Loops
+### Looping through an array
+```js
+const todoList = [
+  'watch youtube',
+  'make dinner',
+  'wash dishes'
+]
+
+for(let i = 0; i <= todoList.length - 1; i++ ) {
+  console.log(todoList[i])
+}
+```
+### Accumulator Pattern
+Let's say we have an array of numbers like [1, 1, 3], how do we calculate the total?<br/>
+_Steps:_
+1. Create a variable to store the result.
+2. Loop through the array and update the result.
+```js
+const nums = [1, 1, 3]
+let total = 0 // Accumulator variable
+
+for(let i = 0; i < nums.length; i++) {
+  total += nums[i] // Accumulating the values of the array
+}
+
+console.log(total)
+```
+
+Creating a copy of the given array only the numbers are doubled:
+```js
+const nums = [1, 1, 3]
+const nums2 = []
+let total = 0 // Accumulator variable
+
+for(let i = 0; i < nums.length; i++) {
+  const num = nums[i] * 2
+  nums2.push(num)
+}
+
+console.log(nums2)
+```
+
+Counting the number of letters in a string
+```javascript
+const letterCounter = () => {
+  const phrase = 'hey, can you go to grocery store with me?'
+  for(letter of phrase){
+    console.log(letter)
+  }
+}
+console.log(letterCounter())
+//for in loop will get you the index of the elements 
+//for of loop will get you the actual elements there are
 ```
