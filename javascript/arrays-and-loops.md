@@ -167,7 +167,41 @@ console.log(a2);
 //output: 16
 //Basically, we sum up all the array elements
 ```
+## Arrays are References
+```js
+const array1 = [1, 2, 3]
+```
+The variable `array1` doesn't actually contain the value [1, 2, 3], the values are saved somewhere in the computer's memory and the `array1` variable only contains a reference and points to the location where the values are present. <br />
+So, if we create a copy of the variable
+```js
+const array1 = [1, 2, 3]
+const array2 = array1
+```
+The variable `array2` will not have a copy of the values but the reference. So now both the variables are pointing to the same array.
+```js
+const array1 = [1, 2, 3]
+const array2 = array1
+array2.push(4)
+console.log(array1) // [1, 2, 3, 4]
+console.log(array2) // [1, 2, 3, 4]
+```
+We can see that even if we added value 4 to the `array2`, both the arrays were modified and that's because arrays are references.<br />
+We can also avoid this behavior by making a copy of the values by using the `slice()` method. This will enable both the variables to point to two different arrays.
+```js
+const array1 = [1, 2, 3]
+const array2 = array1.slice()
+array2.push(4)
+console.log(array1) // [1, 2, 3]
+console.log(array2) // [1, 2, 3, 4]
+```
 <br /><br />
+
+
+
+
+
+
+
 ## JavaScript Loops
 ### Looping through an array
 ```js
