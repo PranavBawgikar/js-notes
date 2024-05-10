@@ -63,3 +63,53 @@ setInterval( function() {
 #### But, what is "asynchronous code"?
 Here, the interpretor will not wait for a particular timed function to execute and then move to the next line of code instead it will set a timer and move to the next LOC. <br />
 On the contrary, synchronous code waits for the current LOC to finish execution before moving to the next. Most of the code we write is synchronous, the only time it becomes asynchronous is when we use certain features of JavaScript, like `setTimeout`. One advantage of `setTimeout` is that it doesn't block our code for that certain period of time (which will be decided by the programmer to time out). It just sets up the timer in background and goes on for executing the next LOC.
+#### `forEach()`
+This method is mostly preferred when we want to loop through an array.
+_Example:_
+```js
+[
+  'make dinner',
+  'wash dishes',
+  'watch youtube'
+].forEach(function(value) {
+  console.log(value)
+}) // This will loop through the array and display each value
+
+[
+  'make dinner',
+  'wash dishes',
+  'watch youtube'
+].forEach(function(value) {
+  if(value === 'wash dishes') {
+    return // Does the same work as `continue` since forEach does not support `continue` statement
+}
+})
+```
+### Arrow Functions
+These work the same way as regular functions.
+_Example:_
+```js
+const arrayFunction = () => {
+  console.log('hello')
+}
+arrowFunction()
+```
+If we only have a single LOC in an arrow function we can write it like
+```js
+const oneLine = () => 2 + 3 // Skipping the curly braces and return statement
+
+console.log(oneLine())
+```
+Converting the above `forEach()` function to an arrow function
+```js
+[
+  'make dinner',
+  'wash dishes',
+  'watch youtube'
+].forEach( (value) => {
+  if(value === 'wash dishes') {
+    console.log(value)
+}
+})
+```
+So when we are passing a function into another function like `forEach()` it is recommended to use arrow functions for more readability.
