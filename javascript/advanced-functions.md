@@ -113,3 +113,49 @@ Converting the above `forEach()` function to an arrow function
 })
 ```
 So when we are passing a function into another function like `forEach()` it is recommended to use arrow functions for more readability.
+#### `addEventListener()`
+Every HTML element has a method called `addEventListener()`, it enables us to execute some code when we interact with that element. It has two parameters:
+- Event, for what type of interaction we want to listen for
+- A function we want to run when an event occurs
+```html
+<html>
+  <head></head>
+  <body>
+    <button onClick=" " class="button">Click</button>
+    <script>
+      const butttonElement = document.querySelector('.button')
+      buttonElement.addEventListener( 'click', () => {
+        console.log('click')
+      })
+    </script>
+  </body>
+</html>
+```
+It also let's us add multiple event listeners for an event. An event listener can be removed using `removeEventListener()`. This function also has two parameters: Event and Function.
+```js
+...
+const eventListener = () => {
+  console.log('click')
+}
+buttonElement.addEventListener('click', eventListener)
+buttonElement.removeEventListener('click', eventListener)
+...
+```
+#### `filter()`
+Let's say we have an array [1, -3, 5] and we want to remove all negative numbers and get [1, 5].
+```js
+console.log([1, -3, 5].filter((value, index) => {
+  if(value >= 0) { // Returns values >= 0
+    return true
+  } else {
+    return false
+  }
+}))
+```
+#### `map()`
+It works just like `forEach()` and `filter()`. It creates a new array and whatever we return will be added to a new array.
+```js
+console.log([1, 1, 3].map((value, index) => {
+  return value * 2
+})) // [2, 2, 6]
+```
