@@ -10,6 +10,8 @@ In it's most basic form JavaScript is a Synchronous, Blocking, Single-threaded l
 2. <em>Blocking</em>: No matter how long a previous process takes, the subsequent processes won't kick off until the former is completed 
 3. <em>Single-threaded language</em>: A thread is simply a process that your JavaScript program can use to run a task. Each thread can only do one task at a time. JavaScript has just the one thread called the main thread for executing any code.
 <br /><br />
+
+`Note: In JavaScript, nested multi-line comments are not allowed.`
 ## JavaScript Math
 Every arithmetic operation in JavaScript or any other programming language for that matter has to follow something known as "Order of operations".
 
