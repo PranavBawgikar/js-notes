@@ -1,5 +1,5 @@
 ## Functions in JavaScript
-Setting a default value for a parameter of a function
+Setting a default value for a parameter of a function <br />
 _Example:_
 ```js
 function calculateTax(cost, taxPercent = 0.1) { // Setting a default value for tax parameter, incase the user does not enter one
@@ -142,3 +142,76 @@ console.log(JSON.parse(jsonString)) // This will convert the product object into
    It is used to save the values more permanently. It only supports string. Remember, when something doesn't exist in localstorage it gives out null.
    - `localStorage.setItem()` is used to save a value inside the localstorage.
    - `localStorage.getItem()` is used to get a value out of localstorage.
+
+### Looping over Objects
+```js
+const = {
+  name: 'Pranav',
+  age: 22,
+  occupation: 'Engineer'
+}
+```
+1. `Objects.keys()`: This method takes your object and returns an array of each property in that object.
+   ```js
+   const = {
+   name: 'Pranav',
+   age: 22,
+   occupation: 'Engineer'
+   }
+
+   console.log(Object.keys(user))
+   // Looping through the object using Object.keys()
+   for(const key of Object.keys(user)) {
+     console.log(`${key} => ${user[key]}`)
+   }
+   ```
+2. `Object.values()`: This method is similar to `Object.keys()` but instead it returns you the values. But, it is not frequently used.
+   ```js
+   const = {
+   name: 'Pranav',
+   age: 22,
+   occupation: 'Engineer'
+   }
+
+   console.log(Object.values(user))
+   ```
+3. `Object.entries()`: This method is sort of like a combination of the above two methods discussed.
+   ```js
+   const = {
+   name: 'Pranav',
+   age: 22,
+   occupation: 'Engineer'
+   }
+
+   console.log(Object.entries(user))
+   ```
+   It outputs an array of arrays i.e., a two-dimensional array and essentially it just contains each one of your keys and values. Now let's loop over the object using `Object.entries()`.
+   ```js
+   const = {
+   name: 'Pranav',
+   age: 22,
+   occupation: 'Engineer'
+   }
+
+   console.log(Object.entries(user))
+
+   // Looping through the objects using Object.entries()
+   for(const entry of Object.entries(user)) {
+     console.log(`${entry[0]} => ${entry[1]}`)
+   }
+   ```
+   It is more frequently used and looks slightly cleaner than `Object.keys()`. We can also write the above example using array destructuring.
+   ```js
+   const = {
+   name: 'Pranav',
+   age: 22,
+   occupation: 'Engineer'
+   }
+
+   console.log(Object.entries(user))
+
+   // Looping through the objects using Object.entries()
+   for(const [key, value] of Object.entries(user)) {
+     console.log(`${key} => ${value}`)
+   }
+   ```
