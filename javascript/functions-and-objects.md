@@ -58,7 +58,7 @@ var c = addFunc(2,3);
 To write to the console use console.log()</mark>
 <br /><br />
 ## Objects in JavaScript
-An object stores key-value pairs, aka properties. The key is a `string` while the value of the property is any JavaScript data type, or another object.
+An object is a collection of related properties and/or methods. It can represent real world objects like people, products and places. An object stores key-value pairs, aka properties.
 
 _Basic syntax:_ 
 ```js
@@ -74,7 +74,20 @@ console.log(person['shirt']) // Bracket notation
 person.phone = '1-222-333-4444'
 console.log(person)
 ```
-Note that, even if an object is declared as a constant, it can be changed by adding, updating or removing its properties. <br />
+```js
+const person = {
+  firstName: 'Spongebob',
+  lastName: 'Squarepants',
+  age: 30,
+  isEmployed: true,
+  sayHello: function() { console.log("Hi, I am spongebob!")},
+  sayBye: function() { console.log("Goodbye!")}
+}
+
+console.log(person.firstName) // Spongebob
+person.sayHello() // Hi, I am spongebob!
+```
+Note that, even if an object is declared as a constant, it can be changed by adding, updating or removing its properties. If you declare two objects with the same name you get a syntax error for example "Uncaught SyntaxError: Identifier 'person' has already been declared at..." <br />
 Bracket notations let's us use properties that normally don't work with dot notation. Let's say we have a property called `delivery-time` for our `product` object and if we
 
 ```js
@@ -215,3 +228,36 @@ const = {
      console.log(`${key} => ${value}`)
    }
    ```
+### Object Cloning
+Let's say we have an object-
+```js
+const circle = {
+  radius: 1,
+  draw() {
+    console.log('draw')
+  }
+}
+```
+In JavaScript, the Object data type has a method called `Object.assign()` which takes all the properties and methods from the source object and then copies them into the new object. It takes two parameters, first we pass a target object which can be an empty object or an existing object and the secondly, we pass one or more source objects.
+```js
+const circle = {
+  radius: 1,
+  draw() {
+    console.log('draw')
+  }
+}
+
+const another = Object.assign({}, circle)
+console.log(another)
+```
+A more simpler way to clone an object is by using the spread operator (...). Basically, the operator takes all the properties and methods and puts them into the new object.
+```js
+const circle = {
+  radius: 1,
+  draw() {
+    console.log('draw')
+  }
+}
+
+const another = {...circle}
+```
