@@ -1,4 +1,5 @@
 ## Advanced Functions
+Different types of functions
 ### Functions are values
 Just like a number we can save functions inside a variable. <br />
 _Example:_ 
@@ -19,14 +20,15 @@ To run the function we can make a call to the function using the variable name i
 function1() // hello
 ```
 ### Anonymous Function
-These functions don't have a name of their own. <br />
+These functions don't have a name of their own and they are usually a function expression that you assign to a variable. <br />
 ```js
 const function2 = function() {
   console.log('hello')
 }
 ```
 One disadvantage of defining function with this approach is that it does not support Hoisting.
-### Storing a function inside an object
+### Object Methods (storing a function inside an object)
+These are functions inside an object. <br />
 _Example:_ 
 ```js
 const object = {
@@ -47,7 +49,36 @@ run( function() { // This is called a 'Callback Hell'
     console.log('hello from another function')
 })
 ```
-### Functions
+
+### Arrow Functions
+These work the same way as regular functions. Arrow functions are always an anonymous function, they cannot be named. <br />
+_Example:_
+```js
+const arrayFunction = () => {
+  console.log('hello')
+}
+arrowFunction()
+```
+If we only have a single LOC in an arrow function we can write it like
+```js
+const oneLine = () => 2 + 3 // Skipping the curly braces and return statement
+
+console.log(oneLine())
+```
+Converting the above `forEach()` function to an arrow function
+```js
+[
+  'make dinner',
+  'wash dishes',
+  'watch youtube'
+].forEach( (value) => {
+  if(value === 'wash dishes') {
+    console.log(value)
+}
+})
+```
+So when we are passing a function into another function like `forEach()` it is recommended to use arrow functions for more readability.
+### Some advanced Functions
 #### `setTimeout()`
 This feature of JavaScript allows us to run a function in the future or after certain period of time. It is a built-in JavaScript function. It takes two parameters -
    - A function we want to run in the future.
@@ -85,34 +116,6 @@ _Example:_
 }
 })
 ```
-### Arrow Functions
-These work the same way as regular functions.
-_Example:_
-```js
-const arrayFunction = () => {
-  console.log('hello')
-}
-arrowFunction()
-```
-If we only have a single LOC in an arrow function we can write it like
-```js
-const oneLine = () => 2 + 3 // Skipping the curly braces and return statement
-
-console.log(oneLine())
-```
-Converting the above `forEach()` function to an arrow function
-```js
-[
-  'make dinner',
-  'wash dishes',
-  'watch youtube'
-].forEach( (value) => {
-  if(value === 'wash dishes') {
-    console.log(value)
-}
-})
-```
-So when we are passing a function into another function like `forEach()` it is recommended to use arrow functions for more readability.
 #### `addEventListener()`
 Every HTML element has a method called `addEventListener()`, it enables us to execute some code when we interact with that element. It has two parameters:
 - Event, for what type of interaction we want to listen for
@@ -159,3 +162,13 @@ console.log([1, 1, 3].map((value, index) => {
   return value * 2
 })) // [2, 2, 6]
 ```
+### Getting a variable out of a file
+To avoid naming conflicts, modules when importing have a unique feature to rename the variables to our liking.
+```js 
+import { cart } from '../data/cart.js'
+```
+can be written as
+```js 
+import { cart as myCart } from '../data/cart.js'
+```
+`Note: You can import a variable or a function from another file.`
