@@ -56,6 +56,36 @@ var c = addFunc(2,3);
 
 <mark>To write to the browser use document.write()
 To write to the console use console.log()</mark>
+### Return keyword in JavaScript
+You can only return one value at a time from a function, it can be a variable or an array or object.
+```js
+// return keyword example
+function calculateSum(x, y) {
+    let sum = x + y
+    return sum
+}
+
+let val = calculateSum(9, 4)
+console.log(val)
+```
+If you write a executable statment in a function after the `return` statement, it will be marked as _'Unreachable Code Detected._' which means it will not be executed.
+```js
+// return keyword example
+function calculateSum(x, y) {
+    let sum = x + y
+    console.log("Before return") // Will be executed
+    return sum
+    console.log("After return") // Unreachable code, will not be executed
+}
+
+let val2 = calculateSum(9, 4)
+console.log(val2)
+```
+### Some functions in JavaScript
+#### `toUpperCase()`
+```js
+console.log("abc".toUpperCase()) // To convert any string to uppercase format
+```
 <br /><br />
 ## Objects in JavaScript
 An object is a collection of related properties and/or methods. It can represent real world objects like people, products and places. An object stores key-value pairs, aka properties.
