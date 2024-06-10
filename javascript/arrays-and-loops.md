@@ -32,18 +32,18 @@ Creating a array that will be used to demonstrate all the properties and methods
 const groceries = ['banana', 'pear', 'apple', 'orange']
 console.log(groceries[0]) // 'banana'
 ```
-### length
+#### length
 `length` is an array _property_ that returns the number of elements you have in a given array.
 ```js
 console.log(groceries.length) // 4
 ```
-### push()
+#### `push()`
 `push` _method_ adds one or more elements to the end of an array and returns the new length of the array.
 ```js
 groceries.push('cookie')
 console.log(groceries) // ['banana', 'pear', 'apple', 'orange', 'cookie']
 ```
-### slice()
+#### `slice()`
 The `slice()` _method_ can be used to create a copy of an array or return a portion of an array. Note that the `slice()` method does not alter the original array but instead creates a duplicate copy.
 ```javascript
 // Without the start and the end parameter
@@ -63,7 +63,7 @@ console.log(groceries.slice(5)) // []
 // The end position will not be included in the extracted elements of the new array
 console.log(groceries.slice(2,4)) // ['apple', 'orange']
 ```
-### splice()
+#### `splice()`
 Unlike the `slice()` method, the `splice()` method will change the contents of the original array.
 The splice() method is used to add or remove elements of an existing array and the return value will be the removed items from the array.
 If nothing was removed from the array, then the return value will just be an empty array.
@@ -149,7 +149,30 @@ const wordFrequency = (phrase) => {
 }
 console.log(wordFrequency('haha lol haha'))
 ```
-###### Array filter() method - Filters a value that passes a test and creates a new array
+#### `filter()`
+_Example 1:_ 
+```js
+const items = [
+    {name: 'Bike', price: 100},
+    {name: 'TV', price: 200},
+    {name: 'Album', price: 10},
+    {name: 'Book', price: 5},
+    {name: 'Phone', price: 500},
+    {name: 'Computer', price: 1000},
+    {name: 'Keyboard', price: 25},
+]
+```
+So let's assume that we want to get the list of items that are less than or equal to $100 price and to achieve this we need to use the `filter()` method to filter out everything that's not under a $100 price range.
+```js
+const filteredItems = items.filter((item) => {
+    return item.price <= 100
+})
+
+console.log(filteredItems)
+```
+The `filter()` method just takes a single parameter, in this case `item` which represents each item inside the array and then we return a true or false statement whether or not we want to include that in the new array. <br />
+The great thing about the `filter()` method and infact all the other array methods is that they don't change the underlying object that you're filtering over. <br />
+_Example 2:_ 
 ```javascript
 let arr = [23, 45, 0, 3, 5, 34];
 let a1 = arr.filter((a) => {
@@ -157,7 +180,7 @@ let a1 = arr.filter((a) => {
 })
 console.log(a1);
 ```
-Array reduce() method
+#### `reduce()`
 ```javascript
 let arr1 = [1, 2, 4, 5, 3, 1];
 let a2 = arr1.reduce((h1, h2) => {
@@ -167,6 +190,27 @@ console.log(a2);
 //output: 16
 //Basically, we sum up all the array elements
 ```
+#### `map()`
+Let's just say we want to get the name of every item and we can do this by using the `map()` method. It is similar to the above code we implemented, just modifying 'filter' to 'map'.
+_Example:_ 
+```js
+const itemNames = items.map((item) => {
+    return item.name
+})
+
+console.log(itemNames)
+```
+All it does is return a new array full of all the names from our array.
+#### `find()`
+It is used to find a single object in an array. Again, it is similar to the previously discussed methods, it takes one parameter.
+```js
+const foundItem = items.find((item) => {
+    return item.name === 'Book'
+})
+
+console.log(foundItem)
+```
+It returns the very first item that it finds in the array.
 ## Arrays are References
 ```js
 const array1 = [1, 2, 3]
