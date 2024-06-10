@@ -51,7 +51,13 @@ run( function() { // This is called a 'Callback Hell'
 ```
 
 ### Arrow Functions
-These work the same way as regular functions. Arrow functions are always an anonymous function, they cannot be named. <br />
+Arrow functions are a compact way of writing functions in JavaScript and are a part of the Modern JavaScript (ES6). They work the same way as regular functions do. In essennce, arrow functions are anonymous function in natre, they cannot be named and need to stored in a variable in order to call them. <br />
+_Syntax:_ 
+```js
+const functionName = (p1, p2, ...) => {
+  // Do Some Work
+}
+```
 _Example:_
 ```js
 const arrayFunction = () => {
@@ -59,7 +65,7 @@ const arrayFunction = () => {
 }
 arrowFunction()
 ```
-If we only have a single LOC in an arrow function we can write it like
+If we only have a single LOC when writing an arrow function, it can be written as
 ```js
 const oneLine = () => 2 + 3 // Skipping the curly braces and return statement
 
