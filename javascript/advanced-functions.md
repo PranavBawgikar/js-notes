@@ -26,7 +26,7 @@ const function2 = function() {
   console.log('hello')
 }
 ```
-One disadvantage of defining function with this approach is that it does not support Hoisting.
+One disadvantage of defining function with this approach is that it does not support <a href="https://github.com/PranavBawgikar/js-notes/blob/main/javascript/js-execution-context.md">Hoisting</a>.
 ### Object Methods (storing a function inside an object)
 These are functions inside an object. <br />
 _Example:_ 
