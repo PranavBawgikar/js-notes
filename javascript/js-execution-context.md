@@ -9,7 +9,7 @@ The main purpose of the Call Stack is for managing the Execution Context. <br />
 
 One thing to note is that there are many other for 'Call Stack' in JavaScript on the web such as - _Execution Context Stack, Program Stack, Control Stack, Runtime Stack and Machine Stack_. There is no need to get confused as they all represent the same meaning.
 ## Hoisting in JavaScript
-Hoisting helps you access variables and methods even before you have defined it. Before the execution process initiates, JavaScript quickly skims through the whole code once and allocates memory to variables and functions. Let's understand this with an example: <br />
+Hoisting helps you access variables and methods even before you have defined it. Before the execution process initiates, JavaScript quickly skims through the whole code once and allocates memory to variables and functions. Let's understand this with an example: <br /> <br />
 Scenario 1:
 ```js
 var x = 9
@@ -40,4 +40,49 @@ Output:
 California Bound
 undefined
 ```
-The reason why we get `undefined` when we try to console log the variable `x` here is because we still haven't assigned a value to `x`. But, since, JavaScript has already skimmed through the whole program and allocated memory in the Execution Context it allocated `undefined` while mcreating that memory and we tried to print it's value even before we assigned any value to it.
+The reason why we get `undefined` when we try to console log the variable `x` here is because we still haven't assigned a value to `x`. But, since, JavaScript has already skimmed through the whole program and allocated memory in the Execution Context it allocated `undefined` while mcreating that memory and we tried to print it's value even before we assigned any value to it. <br /><br />
+Scenario 3:
+```js
+getName()
+console.log(x)
+
+function getName() {
+  console.log("California Bound")
+}
+```
+Output:
+```
+California Bound
+Uncaught RefernceError: x is not defined
+```
+Now, this happens because when JavaScript just skimmed through the program there was no variable `x` to allocate memory, hence the error. <br /><br />
+Scenario 4:
+```js
+console.log(getName)
+
+var x = 9
+function getName() {
+  console.log("California Bound")
+}
+```
+Output:
+```
+f getName() {
+  console.log("California Bound")
+}
+```
+Unlike variable, here we were able to get some value for the `getName` since, when the memory execution was created JavaScript stored the whole function code for the `getName` key. But let's say instead of a normal function the `getName` was an arrow function we would not get the same output. <br /><br />
+Scenario 5:
+```js
+console.log(getName)
+
+var x = 9
+ver getName = () => {
+  console.log("California Bound")
+}
+```
+Output:
+```
+Uncaught TypeError: getName is not a function
+```
+When we are executing an arrow function it behaves just like a variable, so when the memory allocation phase starts similar to `x`, `getName` will also get allocated with `undefined`. This will also be the case when we try to define a anonymous function.
