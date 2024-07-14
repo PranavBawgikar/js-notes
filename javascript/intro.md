@@ -113,6 +113,39 @@ const url = 'http://google.com'
 const visitors = 12
 ```
 `Note: Variables in JavaScript can use uppercase or lowercase alphabets.`
+### Temporal Dead Zone
+The variables that we declare with `let` and `const` are unaccessible until and unless we initialize them or assign any value to it. But, this doesn't mean the `let` keyword is not hoisted, it does allocate memory to the variable when the <a href="https://github.com/PranavBawgikar/js-notes/blob/main/javascript/js-execution-context.md">Global Execution Context</a> is created.
+### Variable Shadowing
+```js
+let foo = 'bar'
+var bar = 'foo'
+if(true) {
+  let foo = 'baz'
+  var bar = 'foobar'
+  console.log(foo) // baz
+  console.log(bar) // foobar
+}
+console.log(foo) // bar
+console.log(bar) // foobar
+```
+The `let` keyword works according to the block scope so you can see two different values when we do `console.log(foo)` which prints value according to the available scope. But, `var` keyword doesn't work like that. It always ignores the block scope. However, the same `var` keyword behaves differently when used inside a function's scope.
+```js
+let foo = 'bar'
+var bar = 'foo'
+function sayHello() {
+  let foo = 'baz'
+  let bar = 'foobar'
+  console.log(foo) // baz
+  console.log(bar) // foobar
+}
+sayHello()
+console.log(foo) // bar
+console.log(bar) // foo
+```
+This is why JavaScript is called a confusing language by many.
+### Illegal Variable Shadowing
+Let's say you have declared a variable using `let` keyword on the Global EC and you declare a variable with the same name using the `var` keyword inside a `if` block scope it will give you a SyntaxError. That means we cannot re-declare that `let` variable with `var` keyword even if it is in another block scope.
+
 ## JavaScript Boolean
 A boolean is a data type whose value represents whether something is true or false. This data type has only two possible values either _true_ or _false_. 
 ### Truthy and Falsy values
