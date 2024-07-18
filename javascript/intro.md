@@ -79,7 +79,99 @@ console.log(
 )
 // some\ntext
 ```
+### Properties and Methods
+#### `charAt()`
+This method returns the character in a string based on the index position provided.
+```js
+let useraName = 'Chukku89'
+console.log(userName.charAt(0)) // C
+```
+#### `indexOf()`
+This method returns the index of the first occurence of the character.
+```js
+let userName = 'Chukku89'
+console.log(userName.indexOf('o')) // 2
+```
+#### `lastIndexOf()`
+This method returns the index of the last occurrence of the character.
+```js
+let userName = 'Chukku89'
+console.log(userName.lastIndexOf('o')) // 5
+```
+#### `length`
+This is a property and not a method which is used to get the length of a string.
+```js
+let userName = 'Chukku89'
+console.log(userName.length) // 8
+```
+#### `trim()`
+Maybe there is a bunch of whitespace after or before your string and you want to get rid of it then in that case you can use this method.
+```js
+let userName = 'Chukku89   '
+console.log(userName.trim())
+```
+#### `toUpperCase()` and `toLowerCase()`
+These methods are used to transform your string to uppercase and lowercase format respectively.
+```js
+let userName = 'Chukku89'
+console.log(userName.toUpperCase()) //CHUKKU89
+console.log(userName.toLowerCase()) //chukku89
+```
+#### `repeat()`
+This method is used to repeat a string number of times. Within the paranthesis of the methodd you mention the number of times you want the string to be repeated.
+```js
+let userName = 'Chukku89'
+console.log(userName.repeat(3)) //Chukku89Chukku89Chukku89
+```
+#### `startsWith()`
+This method is used to determine if a string starts with a given character or not. It returns a boolean value. This method can be especially useful when working with `if` statements.
+```js
+let demo = 'Demo'
+let result1 = demo.startsWith(' ')
+console.log(result1) // false
+let result2 = demo.startsWith('D')
+console.log(result2) // true
+```
+#### `endswith()`
+The antonymous method to `startsWith()` method.
+```js
+let demo = 'Demo'
+let result1 = demo.startsWith('o')
+console.log(result1) // true
 ## JavaScript Variables
+```
+#### `includes()`
+This method tells whether the string contains a particular character or not.
+```js
+let userName = 'Chukku89'
+let result = userName.includes(' ')
+if(result) {
+  console.log('Your username can't include " "')
+} else {
+  console.log(userName)
+}
+```
+#### `replaceAll()`
+```js
+let phoneNumber = '123-456-7890'
+phoneNumber = phoneNumber.replaceAll('-', ' ')
+console.log(phoneNumber)
+```
+#### `padStart()`
+The value within this method is a sspecified length i.e., how many characters should the string be? and the second value is used to pad the string with any desired character.
+```js
+let phoneNumber = '123-456-7890'
+phoneNumber = phoneNumber.padStart(15, '0')
+console.log(phoneNumber) // 000123-456-7890
+```
+Basically, we are trying to tell here that the string should be padded with `0` until it is 15 characters long.
+#### `padEnd()`
+Pad the end of the string with a specified character until it is `x` characters long.
+```js
+let phoneNumber = '123-456-7890'
+phoneNumber = phoneNumber.padEnd(15, '0')
+console.log(phoneNumber) // 123-456-7890000
+```
 Some syntax rules for variables:
 1. Can't use special words. Example: `let`
 2. Can't start with a number.
