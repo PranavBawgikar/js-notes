@@ -180,6 +180,22 @@ let a1 = arr.filter((a) => {
 })
 console.log(a1);
 ```
+#### `forEach()`
+Unlike the previously discussed methods, this method does not return anything. It works very similarly to a `for` loop but instead it takes a function as a parameter. 
+```js
+items.forEach((item) => {
+    console.log(item.price)
+})
+```
+#### `some()`
+This one is a bit different than most of our other functions since instead of returning a brand-new array it's actually going to return `true` or `false`. So, we can check if some of the items in this array have a price less then $100.
+```js
+const hasInexpensiveItems = items.some((item) => {
+    return item.price <= 100
+})
+
+console.log(hasInexpensiveItems)
+```
 #### `reduce()`
 ```javascript
 let arr1 = [1, 2, 4, 5, 3, 1];
