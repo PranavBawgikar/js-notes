@@ -264,3 +264,15 @@ _Understanding the above code:_
 When `cartQuantity` = 5<br />Then `cartQuantity > 0`  will result in  `true`<br />And just writing `cartQuantity` will be a `truthy` value.
 <br /><br />
 When `cartQuantity` = 0<br />Then `cartQuantity > 0` will result in `false`<br />And just writing `cartQuantity` will be a `falsy` value.
+## JavaScript Null
+Null is another data-type in JavaScript which contains which contains only one possible value which is `null`.
+```js
+let a
+console.log(a) // undefined
+```
+The above code will result into `undefined` value, since we have defined variable but haven't assigned any value to it.
+```js
+let a = null
+console.log(a) // null
+```
+Here, we explicitly define `a` as `null`. `null` is an assignment value and it can be assigned to a variable as a representation of 'no value.' Remember, JavaScript never sets a value to `null`, this must be done manually in your program.
