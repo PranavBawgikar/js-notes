@@ -181,7 +181,7 @@ console.log(JSON.Stringify(product)) // This will convert the product object int
 const jsonString = JSON.Stringify(product)
 console.log(JSON.parse(jsonString)) // This will convert the product object into JSON
 ```
-3. localstorage:
+2. localstorage:
    It is used to save the values more permanently. It only supports string. Remember, when something doesn't exist in localstorage it gives out null.
    - `localStorage.setItem()` is used to save a value inside the localstorage.
    - `localStorage.getItem()` is used to get a value out of localstorage.
@@ -290,4 +290,80 @@ const circle = {
 }
 
 const another = {...circle}
+```
+### JavaScript Math
+`Math` is a built-in JavaScript object that provides a collection of math-related properties and methods.
+```js
+console.log(Math.PI)
+console.log(Math.E) // Euler's Number
+```
+#### `round()`
+This method is used to round <u>up</u> a decimal number to it's nearest positive integer.
+```js
+let x = 3.21
+let y = 2
+let z
+z = Math.round(x)
+console.log(z) // 3
+```
+#### `floor()`
+This method is used to round <u>down</u> a decimal number to it's nearest positive integer.
+```js
+let x = 3.99
+let y = 2
+let z
+z = Math.floor(x)
+console.log(z) // 3
+```
+#### `ceil()`
+This method is also used to round up a decimal number (the opposite to `floor`).
+```js
+let x = 3.21
+let y = 2
+let z
+z = Math.ceil(x)
+console.log(z) // 4
+```
+#### `trunc()`
+Short for truncaate, this method eliminates any decimal portion in a number.
+```js
+let x = 3.21
+let y = 2
+let z
+z = Math.trunc(x)
+console.log(z) // 3
+```
+#### `pow()`
+This method is used to raise a base to a given power.
+```js
+let x = 3
+let y = 2
+let z
+z = Math.pow(x, y)
+console.log(z) // 9
+```
+#### `sqrt()`
+This method is used to find out square root of a number.
+```js
+z = Math.sqrt(x)
+```
+#### `abs()`
+This method is used to find the absolute value of a number.
+```js
+let x = -3.21
+let y = 2
+let z
+z = Math.abs(x)
+console.log(z) // 3.21, Basically, it gives the same number but it will be positive
+```
+#### `min()` and `max()`
+These two methods are used to find the minimum and maximum values respectively.
+```js
+let x = 3
+let y = 2
+let z = 1
+let max = Math.max(x, y, z)
+let min = Math.min(x, y, z)
+console.log(max) // 3
+console.log(min) // 1
 ```
