@@ -56,4 +56,10 @@ window.console.log('window')
 // It is the same as
 console.log('window')
 ```
-We generally don't type `window.` while coding because `window` is a built-in and JavaScript automatically adds it for us automatically.
+We generally don't type `window.` while coding because `window` is a built-in and JavaScript automatically adds it for us automatically. Let's look at one example of the `window` object. <br />
+Accepting user input (the EASY way)
+```js
+let userName = window.prompt('What's your username?')
+console.log(userName)
+```
+Check <a href="https://github.com/PranavBawgikar/js-notes/blob/main/javascript/simple-functions.html">how the user input should be accepted in a professional way (using HTML TextBox)</a>.
