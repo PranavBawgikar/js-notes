@@ -276,3 +276,33 @@ let a = null
 console.log(a) // null
 ```
 Here, we explicitly define `a` as `null`. `null` is an assignment value and it can be assigned to a variable as a representation of 'no value.' Remember, JavaScript never sets a value to `null`, this must be done manually in your program.
+## Type Conversion
+A process of changing the data type of a value to another data type. For example—
+```js
+let age = window.prompt("How old are you?")
+age += 1
+console.log(age) // 251 (If input → 25)
+```
+Here, say the input is entered as `25` and when we add `1` to the input it gives output as `251`. That is because, it performs string concatenation as the input that is accepted is in string format. To correct that—
+```js
+let age = window.prompt("How old are you?")
+age = Number(age) // Converts any data type to Number
+age += 1
+console.log(age) // 26 (If input → 25)
+console.log(age, typeof age) // 26 'number'
+```
+Another example—
+```js
+let x = 'pizza'
+let y = 'pizza'
+let z = 'pizza'
+
+x = Number(x)
+y = String(y)
+z = Boolean(z)
+
+console.log(x, typeof x) // NaN 'number'
+console.log(y, typeof y) // pizza string
+console.log(z, typeof z) // true 'boolean
+```
+If you attempt to convert alphabetical characters into a number that variable will be `NaN` which means Not a number. But, the data type still remains a number. For `y` the pizza is already a `string` so converting it to a string doesn't really make any difference. Now, as for `z` if you convert a string to a `boolean` returns `true` this happens because as long as there is a value provided while converting it will always return `true`.
