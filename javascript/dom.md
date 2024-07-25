@@ -1,6 +1,6 @@
 ## Document Object Model
 DOM is a built-in object in JavaScript. It combines the JavaScript and HTML together and gives JavaScript control of the webpage. <br />
-One thing to remember, when an HTML element is inside JavaScript, the HTML element is converted into JavaScript object.
+One thing to remember, when an HTML element is inside JavaScript, the HTML element is converted into JavaScript object. 
 ```html
 <html>
   <head>
@@ -50,11 +50,21 @@ _Example:_
 ```
 One thing to remember, whenever we get a value from the DOM it will be a string
 ### Window Object
-The `window` object represents the browser. The `document` object is inside the `window` object and so is the `console` object. If we do-
+The `window` object represents the whole browser, all global JavaScript objects, functions and variables automatically become members of the window object. You can onsole log the window object to see all the methods and properties. The `document` object is inside the `window` object and so is the `console` object. If we do-
 ```js
 window.console.log('window')
 // It is the same as
 console.log('window')
+```
+Window Controls
+```js
+window.open() //Open Window
+
+window.close() //Close Window
+
+window.moveTo() //Move to ".." window
+
+window.resize() //Resize the window
 ```
 We generally don't type `window.` while coding because `window` is a built-in and JavaScript automatically adds it for us automatically. Let's look at one example of the `window` object. <br />
 Accepting user input (the EASY way)
