@@ -1,0 +1,5 @@
+## Callback Function
+A callback function is a function that is passed as an argument to another function and is intended to be executed later, typically after the completion of an asynchronous operation or when a specific event occurs. In other words, instead of executing immediately, the callback function is "called back" at a later time, usually in response to some trigger or condition. The basic idea behind using callback functions is to ensure that certain actions are taken only after a specific task is completed or when an event of interest happens. They are an essential part of building non-blocking and event-driven applications.
+- Types of Callbacks:
+  1. Synchronous Callbacks: A callback which is executed immediately is called a synchronous callback.
+  2. Asynchronous Callbacks: A callback that is often used to continue or resume code execution after an asynchronous operation has completed. They are used to delay the execution of a function until a particular time or event has occurred.
