@@ -168,6 +168,26 @@ console.log([1, 1, 3].map((value, index) => {
   return value * 2
 })) // [2, 2, 6]
 ```
+#### `parseInt()`
+This function parses a string and returns an integer.
+
+Syntax: `parseInt(string, radix)`
+
+The radix parameter is used to specify which numeral system to be used, for e.g., a radix of 16 (hexadecimal) indicates that the number in the string should be parsed from a hex number to decimal number. Only the first number in the string is returned. Leading and trailing spaces are allowed here. If the first character cannot be converted to a number, parseInt() returns NaN.
+
+_Example:_
+```javascript
+document.write(parseInt("10")+"<br>") //10
+document.write(parseInt("12.00")+"<br>") //12
+document.write(parseInt("10 20 30")+"<br>") //10
+document.write(parseInt(" 90 ")+"<br>") //90
+document.write(parseInt("10 years")+"<br>") //10
+document.write(parseInt("years 10")+"<br>") //NaN
+document.write(parseInt("020")+"<br>") //20
+document.write(parseInt("12", 8)+"<br>") //10 in decimal from octal
+document.write(parseInt("0x12")+"<br>") //hex 12 to decimal - 18 
+```
+
 ### Getting a variable out of a file
 To avoid naming conflicts, modules when importing have a unique feature to rename the variables to our liking.
 ```js 
