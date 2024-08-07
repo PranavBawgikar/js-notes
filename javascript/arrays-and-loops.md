@@ -196,7 +196,34 @@ const hasInexpensiveItems = items.some((item) => {
 
 console.log(hasInexpensiveItems)
 ```
+#### `every()`
+This method is very similar to `some()` except that instead of checking for at least one item, it checks every single item inside that array.
+```js
+const hasInexpensiveItems = items.some((item) => {
+    return item.price <= 100
+})
+
+console.log(hasInexpensiveItems) // false, since not all elements are less than or equal to 100 in the array
+```
+```js
+const hasInexpensiveItems = items.some((item) => {
+    return item.price <= 1000
+})
+
+console.log(hasInexpensiveItems) // true, since all elements are less than or equal to 1000 in the array
+```
 #### `reduce()`
+This method is a bit different from all the other methods since it performs some operations on the array and returns a combination of all those different operations.
+_For example:_
+```js
+const total = items.reduce((currentTotal, item) => {
+    return item.price + currentTotal
+}, 0)
+
+console.log(total)
+```
+Let's say we wanted to get the total price of all the different items in this array. Generally, you would do a for loop and add the price every single time and then print out the price. But, instead of that you can use the `reduce()` method to do this. The syntax for using `reduce()` method is a bit different; instead of taking an item, it takes an item and a property for what we want to reduce (currentTotal).
+The `reduce()` method runs a function on every item inside our array.
 ```javascript
 let arr1 = [1, 2, 4, 5, 3, 1];
 let a2 = arr1.reduce((h1, h2) => {
@@ -205,6 +232,15 @@ let a2 = arr1.reduce((h1, h2) => {
 console.log(a2);
 //output: 16
 //Basically, we sum up all the array elements
+```
+#### `includes()`
+It takes a single argument. It checks if whatever has been passed to it is present inside the array or not.
+```js
+const items = [1, 2, 3, 4, 5]
+
+const includesTwo = items.includes(2)
+
+console.log(includesTwo) // true
 ```
 #### `map()`
 Let's just say we want to get the name of every item and we can do this by using the `map()` method. It is similar to the above code we implemented, just modifying 'filter' to 'map'.
