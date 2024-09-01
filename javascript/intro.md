@@ -306,3 +306,23 @@ console.log(y, typeof y) // pizza string
 console.log(z, typeof z) // true 'boolean
 ```
 If you attempt to convert alphabetical characters into a number that variable will be `NaN` which means Not a number. But, the data type still remains a number. For `y` the pizza is already a `string` so converting it to a string doesn't really make any difference. Now, as for `z` if you convert a string to a `boolean` returns `true` this happens because as long as there is a value provided while converting it will always return `true`.
+## Switch Statement in JavaScript
+`switch` can be an efficient replacement to `else-if` statements. Here, a value is examined against matching cases. The `break` statement helps break out of the switch, if it is removed, and a case is matched, it starts executing from that particular line and cascades executing any code that follows after.
+
+<i>Find an example <a href="https://github.com/PranavBawgikar/js-notes/blob/main/javascript/switch.js">here</a>.</i>
+## Ternary Operator in JavaScript
+The ternary operator is a shortcut to `else-if` statement. It helps to assign a variable based on a condition.
+
+_Syntax:_ 
+`condition ? codeIfTrue : codeIfFalse`
+
+_Example:_
+```js
+let age = 21
+console.log(age >= 18 ? "You're an adult." : "You're a minor.")
+```
+```js
+let purchaseAmount = 125
+let discount = purchaseAmount >= 100 ? 10 : 0
+console.log(`You're total is $${purchaseAmount - purchaseAmount * (discount/100)}`) // You're total is $112.5
+```
