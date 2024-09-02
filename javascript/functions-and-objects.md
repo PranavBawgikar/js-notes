@@ -291,6 +291,19 @@ const circle = {
 
 const another = {...circle}
 ```
+### Object Destructuring
+It is a way to extract values from an object and put them inside individual variables.
+_Example:_
+```js
+const user = {
+  'name': 'Alex',
+  'address': '15th Park Avenue',
+  'age': 43
+}
+
+// const { name } = user // Alex
+const { name: userName } = user // Alex
+```
 ### JavaScript Math
 `Math` is a built-in JavaScript object that provides a collection of math-related properties and methods.
 ```js
