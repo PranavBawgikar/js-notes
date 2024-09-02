@@ -51,25 +51,55 @@ run( function() { // This is called a 'Callback Hell'
 ```
 
 ### Arrow Functions
-Arrow functions are a compact way of writing functions in JavaScript and are a part of the Modern JavaScript (ES6). They work the same way as regular functions do. In essennce, arrow functions are anonymous function in natre, they cannot be named and need to stored in a variable in order to call them. <br />
+Arrow functions are a compact way of writing functions in JavaScript and are a part of the Modern JavaScript (ES6). They work the same way as regular functions do. In these, the `function` keyword is completely omitted. In essennce, arrow functions are anonymous function in nature, they cannot be named and need to stored in a variable in order to call them. <br />
 _Syntax:_ 
 ```js
 const functionName = (p1, p2, ...) => {
   // Do Some Work
 }
 ```
-_Example:_
+_Example 1:_
 ```js
-const arrayFunction = () => {
-  console.log('hello')
+// Conventional way of writing functions
+function sum(a, b) {
+  return a + b
 }
-arrowFunction()
 ```
-If we only have a single LOC when writing an arrow function, it can be written as
+```js
+// Converting to Arrow function
+let sum2 = (a, b) => {
+  return a + b
+}
+```
+If we only have a single LOC, using an arrow function, we can write it as
+```js
+let sum2 = (a, b) => a + b
+```
+Here, it just assumes that everything after the arrow is returned which makes it more concise and easier to use.
 ```js
 const oneLine = () => 2 + 3 // Skipping the curly braces and return statement
 
 console.log(oneLine())
+```
+#### Single Parameter Functions
+```js
+// Conventional way
+function isPositive(number) {
+  return number >= 0
+}
+```
+```js
+// Converting to Arrow function
+let isPositive = number => number >= 0
+```
+Arrow functions really shine when we deal with anonymous functions or functions that have no name.
+```js
+document.addEventListener('click', function() {
+  console.log('click')
+})
+```
+```js
+document.addEventListener('click', () => console.log('click'))
 ```
 Converting the above `forEach()` function to an arrow function
 ```js
